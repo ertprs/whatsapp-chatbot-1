@@ -12,11 +12,14 @@ exports.messagingResponse = messagingResponse
 
 exports.sendMessage = (message, from, to) => {
 
+    console.log('entrou aqui', from, to)
+
     client.messages.create({
         body: 'Seja bem vindo a Tele Sena',
         from: from,
         to: to
     })
         .then(message => console.log(message.sid))
+        .catch(error => console.log('error', error))
 
 }
