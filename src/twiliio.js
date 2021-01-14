@@ -12,12 +12,12 @@ exports.messagingResponse = messagingResponse
 
 exports.sendMessage = (message, from, to) => {
 
-    console.log('entrou aqui', from, to)
+    console.log('entrou aqui', from, to, process.env.TWILIO_PHONENUMBER)
 
     client.messages.create({
         body: 'Seja bem vindo a Tele Sena',
         from: from,
-        to: to
+        to: process.env.TWILIO_PHONENUMBER
     })
         .then(message => console.log(message.sid))
         .catch(error => console.log('error', error))
