@@ -10,19 +10,16 @@ const messagingResponse = new twilio.twiml.MessagingResponse;
 exports.client = client
 exports.messagingResponse = messagingResponse
 
-exports.sendMessage = (message, whatsappFrom) => {
+exports.sendMessage = (message, from, to) => {
 
-    const twiml = new MessagingResponse();
+    // const twiml = new MessagingResponse();
 
-    console.log('retornando', req.body.Body);
-
-    if (req.body.Body.toLowerCase().trim() !== "Ola") {
-
+    if (message === "Ola") {
+        client.messages.create({
+            body: 'Seja bem vindo a Tele Sena',
+            from: from,
+            to: to
+        })
+            .then(message => console.log(message.sid))
     }
-
-    // client.messages.create({
-    //     body: message,
-    //     from: `whatsapp:${process.env.TWILIO_PHONENUMBER}`,
-    //     to: 
-    // })
 }

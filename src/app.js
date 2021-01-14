@@ -18,10 +18,7 @@ app.post('/incoming', (req, res) => {
     console.log(req.body)
     console.log('retornando', req.body.Body);
 
-    const whatsappFrom = req.body.From;
-    const message = req.body.Body;
-
-    console.log('ver --->', whatsappFrom, message);
+    twilioAccount.sendMessage(req.body.Body, req.body.From, req.body.To)
 })
 
 app.listen(port, () => {
