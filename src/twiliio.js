@@ -16,8 +16,8 @@ exports.sendMessage = (message, from, to) => {
 
     client.messages.create({
         body: 'Seja bem vindo a Tele Sena',
-        from: from,
-        to: process.env.TWILIO_PHONENUMBER
+        from: process.env.TWILIO_PHONENUMBER,
+        to: to
     })
         .then(message => console.log(message.sid))
         .catch(error => console.log('error', error))
