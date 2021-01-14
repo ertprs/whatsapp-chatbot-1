@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.post('/incoming', (req, res) => {
     console.log(req.body)
+    console.log('retornando', req.body.Body);
 })
 
 app.listen(port, () => {
