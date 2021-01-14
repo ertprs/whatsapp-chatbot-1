@@ -12,14 +12,11 @@ exports.messagingResponse = messagingResponse
 
 exports.sendMessage = (message, from, to) => {
 
-    // const twiml = new MessagingResponse();
+    client.messages.create({
+        body: 'Seja bem vindo a Tele Sena',
+        from: from,
+        to: to
+    })
+        .then(message => console.log(message.sid))
 
-    if (message === "Ola") {
-        client.messages.create({
-            body: 'Seja bem vindo a Tele Sena',
-            from: from,
-            to: to
-        })
-            .then(message => console.log(message.sid))
-    }
 }
