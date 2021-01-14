@@ -20,9 +20,9 @@ exports.sendMessage = (message) => {
 
     }
 
-    client.messages.create({
-        body: message,
-        from: `whatsapp:${process.env.TWILIO_PHONENUMBER}`,
-        to: 
-    })
+    // client.messages.create({
+    //     body: message,
+    //     from: `whatsapp:${process.env.TWILIO_PHONENUMBER}`,
+    //     to: 
+    // })
 }
