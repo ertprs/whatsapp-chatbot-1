@@ -16,7 +16,7 @@ exports.sendMessage = (message, from, to) => {
 
     client.messages.create({
         body: 'Seja bem vindo a Tele Sena',
-        from: process.env.TWILIO_PHONENUMBER,
+        from: 'whatsapp:' + process.env.TWILIO_PHONENUMBER,
         to: to
     })
         .then(message => console.log(message.sid))
