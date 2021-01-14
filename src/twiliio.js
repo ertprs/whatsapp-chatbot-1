@@ -10,7 +10,7 @@ const messagingResponse = new twilio.twiml.MessagingResponse;
 exports.client = client
 exports.messagingResponse = messagingResponse
 
-exports.sendMessage = (message) => {
+exports.sendMessage = (message, whatsappFrom) => {
 
     const twiml = new MessagingResponse();
 
